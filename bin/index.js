@@ -3,6 +3,7 @@
 import fs from "fs";
 import path from "path";
 import url from "url";
+import { execSync } from "child_process";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
@@ -21,11 +22,22 @@ const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
 pkg.name = projectName;
 fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
 
-console.log(`✅ Project created at ${targetDir}! 🎉🎉`);
+console.log(`✅ Project "${projectName}" created successfully! 🎉`);
+console.log("📦 Installing dependencies...");
 
+execSync("npm install express@latest dotenv@latest", {
+  stdio: "inherit",
+  cwd: targetDir,
+});
+execSync(
+  "npm install @types/express@latest @types/node@latest nodemon@latest ts-node@latest typescript@latest -D",
+  { stdio: "inherit", cwd: targetDir }
+);
+
+console.log("✨ Done!");
 console.log(`
 Next steps:
   cd ${projectName}
-  npm install   # or yarn / pnpm install
   npm run dev
+Happy coding! 🚀
 `);

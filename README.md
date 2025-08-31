@@ -40,7 +40,8 @@ This will:
 1. Create a new project folder
 2. Copy the template files
 3. Initialize `package.json` with the correct project name
-4. Show you the next steps
+4. Install dependencies and dev dependencies
+5. Show you the next steps
 
 ---
 

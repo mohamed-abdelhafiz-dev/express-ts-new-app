@@ -8,16 +8,5 @@
     "start": "node dist/server.js"
   },
   "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "express": "latest",
-    "dotenv": "latest"
-  },
-  "devDependencies": {
-    "@types/express": "latest",
-    "@types/node": "latest",
-    "nodemon": "latest",
-    "ts-node": "latest",
-    "typescript": "latest"
-  }
+  "license": "MIT"
 }
