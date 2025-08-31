@@ -1,0 +1,32 @@
+{
+  "name": "express-ts-new-app",
+  "version": "1.0.0",
+  "description": "A CLI tool to create a TypeScript Express.js project",
+  "type": "module",
+  "bin": {
+    "express-ts-new-app": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "template"
+  ],
+  "scripts": {
+    "dev": "node ./bin/index.js"
+  },
+  "author": "mohamed-abdelhafiz-dev",
+  "license": "MIT",
+  "keywords": [
+    "express",
+    "typescript",
+    "boilerplate",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamed-abdelhafiz-dev/express-ts-new-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mohamed-abdelhafiz-dev/express-ts-new-app/issues"
+  },
+  "homepage": "https://github.com/mohamed-abdelhafiz-dev/express-ts-new-app#readme"
+}
