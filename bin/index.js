@@ -25,14 +25,25 @@ fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2));
 console.log(`✅ Project "${projectName}" created successfully! 🎉`);
 console.log("📦 Installing dependencies...");
 
+// install runtime dependencies
 execSync("npm install express@latest dotenv@latest", {
   stdio: "inherit",
   cwd: targetDir,
 });
+
+// install dev dependencies
 execSync(
-  "npm install @types/express@latest @types/node@latest nodemon@latest ts-node@latest typescript@latest -D",
+  "npm install -D @types/express@latest @types/node@latest nodemon@latest ts-node@latest typescript@latest eslint@latest @typescript-eslint/parser@latest @typescript-eslint/eslint-plugin@latest typescript-eslint@latest eslint-plugin-import@latest eslint-config-prettier@latest prettier@latest eslint-plugin-prettier@latest",
   { stdio: "inherit", cwd: targetDir }
 );
+
+console.log("initializing git repository...");
+execSync("git init", { stdio: "inherit", cwd: targetDir });
+execSync("git add .", { stdio: "inherit", cwd: targetDir });
+execSync('git commit -m "Initial commit"', {
+  stdio: "inherit",
+  cwd: targetDir,
+});
 
 console.log("✨ Done!");
 console.log(`
