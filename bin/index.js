@@ -61,7 +61,7 @@ fs.writeFileSync(
 
 const dotenvContent = `
 # Environment variables
-PORT=3000
+
 `;
 
 fs.writeFileSync(path.join(targetDir, ".env"), dotenvContent.trimStart());
