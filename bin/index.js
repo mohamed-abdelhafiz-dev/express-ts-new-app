@@ -37,6 +37,35 @@ execSync(
   { stdio: "inherit", cwd: targetDir }
 );
 
+// create .gitignore
+const gitignoreContent = `
+# Node.js
+node_modules
+dist
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor
+.vscode
+.idea
+`;
+
+fs.writeFileSync(
+  path.join(targetDir, ".gitignore"),
+  gitignoreContent.trimStart()
+);
+
+const dotenvContent = `
+# Environment variables
+PORT=3000
+`;
+
+fs.writeFileSync(path.join(targetDir, ".env"), dotenvContent.trimStart());
+
 console.log("initializing git repository...");
 execSync("git init", { stdio: "inherit", cwd: targetDir });
 execSync("git add .", { stdio: "inherit", cwd: targetDir });

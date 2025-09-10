@@ -13,3 +13,5 @@ pnpm-debug.log*
 # env files
 .env
 
+# sample-project
+my-express-app
